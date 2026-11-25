@@ -1,0 +1,333 @@
+/* Canadian Heart Care Design System — generated from tokens.json */
+:root, [data-theme="light"] {
+  --red-50: #fdecee; /* Lightest red tint: soft badge and alert backgrounds. */
+  --red-100: #fad2d6; /* Red tint for hover fills on light surfaces. */
+  --red-200: #f4a6ad; /* Red ramp step; light decorative fills. */
+  --red-300: #ee7a84; /* Red ramp step; illustrations and charts. */
+  --red-400: #e85561; /* Red ramp step; lighter accent on dark panels. */
+  --red-500: #e1313e; /* Heart Red, the logo red and core brand color. White text on it is 4.2:1, so set white labels at 24px+ or bold 19px+ on it. */
+  --red-600: #c81d2b; /* Deep Red from the flyer: pressed and strong states, red text on white (5.2:1). */
+  --red-700: #a41420; /* Red ramp step; deep red text and borders. */
+  --red-800: #7c0e18; /* Red ramp step; darkest red accents. */
+  --red-900: #4f080f; /* Near-black red for deep gradient ends. */
+  --blue-50: #e9f4fb; /* Lightest blue tint: info backgrounds. */
+  --blue-100: #c9e4f5; /* Blue tint for hover fills. */
+  --blue-200: #8fc6ea; /* Blue ramp step; light fills. */
+  --blue-300: #54a7de; /* Blue ramp step; illustrations. */
+  --blue-400: #2c92d3; /* Blue ramp step; start of the blue gradient. */
+  --blue-500: #1c82c6; /* Caring-Hands Blue, the logo swoosh; secondary brand color. */
+  --blue-600: #1366a0; /* Blue ramp step; link text on white. */
+  --blue-700: #0e4e7c; /* Blue ramp step; deep blue text. */
+  --blue-800: #0a3a5c; /* Blue ramp step; darkest blue accents. */
+  --blue-900: #06283f; /* Near-black blue. */
+  --orange-300: #f9b477; /* Light orange tint. */
+  --orange-400: #f69a4e; /* Orange ramp step; hover on orange fills. */
+  --orange-500: #f37c20; /* Vital Orange, the flyer footer and CTA accent (referral and download buttons). White text on it is under 3:1: use dark or large bold labels. */
+  --orange-600: #dc6810; /* Orange ramp step; pressed orange. */
+  --orange-700: #b5530b; /* Orange ramp step; orange text on white. */
+  --black: #000000; /* Pure black; rarely used, prefer ink-950. */
+  --ink-950: #0a0c0e; /* Ink Black: the signature near-black panels (Why Us, title slides). */
+  --ink-900: #14181c; /* Primary text on light surfaces; second dark surface. */
+  --ink-800: #1f252b; /* Dark surface step. */
+  --ink-700: #333b43; /* Body copy on white in long-form text. */
+  --ink-600: #4c555f; /* Secondary text on white and ink-50. */
+  --ink-500: #6b747e; /* Captions on white (4.7:1). */
+  --ink-400: #9098a1; /* Muted text and labels. Only 2.9:1 on white: use for non-essential text or large type. */
+  --ink-300: #b7bdc4; /* Strong borders. */
+  --ink-200: #d6dadf; /* Default borders and dividers. */
+  --ink-100: #e9ecef; /* Subtle borders; image placeholders. */
+  --ink-50: #f4f6f8; /* Sunken surface, page sections behind cards. */
+  --white: #ffffff; /* Page and card surface; text on dark and brand panels. */
+  --success: #2e9e5b; /* Success status and the flyer's service checkmark. Pair with an icon or word, not color alone. */
+  --success-soft: #e4f4ea; /* Success background. */
+  --warning: #f0a516; /* Warning status fill; too light for text on white, pair with ink text. */
+  --warning-soft: #fcf1d7; /* Warning background. */
+  --danger: #d5283a; /* Clinical alert, kept a hair off brand red so alerts read as alerts. */
+  --danger-soft: #fbe2e5; /* Danger background. */
+  --info: var(--blue-500); /* Informational status. */
+  --info-soft: var(--blue-50); /* Info background. */
+  --ecg-pink: #fbe4ea; /* ECG graph-paper backdrop. */
+  --brand: var(--red-500); /* The brand role: logo red, primary buttons, eyebrows. */
+  --brand-strong: var(--red-600); /* Pressed / strong brand. */
+  --brand-secondary: var(--blue-500); /* Secondary brand role. */
+  --brand-accent: var(--orange-500); /* Action accent for referral and download CTAs. */
+  --text-primary: var(--ink-900); /* Body and headings on surface-page, surface-raised and surface-sunken. */
+  --text-secondary: var(--ink-600); /* Secondary copy on surface-page and surface-sunken. */
+  --text-muted: var(--ink-400); /* Muted labels on surface-page; 2.9:1, so large or non-essential text only. */
+  --text-on-dark: var(--white); /* Text on surface-dark, surface-dark-2 and surface-brand (on brand red, 24px+ or bold 19px+). */
+  --text-on-dark-dim: rgba(255, 255, 255, 0.66); /* Secondary text on surface-dark. */
+  --text-on-brand: var(--white); /* Labels on surface-brand and red buttons; large or bold labels. */
+  --text-link: var(--blue-600); /* Links on surface-page. */
+  --surface-page: var(--white); /* Page background. */
+  --surface-raised: var(--white); /* Cards and panels. */
+  --surface-sunken: var(--ink-50); /* Sunken sections behind cards. */
+  --surface-dark: var(--ink-950); /* Signature black panels. */
+  --surface-dark-2: var(--ink-900); /* Second dark surface on black panels. */
+  --surface-brand: var(--red-500); /* Solid brand panels. */
+  --border-subtle: var(--ink-100); /* Card borders. */
+  --border-default: var(--ink-200); /* Input and divider borders. */
+  --border-strong: var(--ink-300); /* Strong borders, hovered inputs. */
+  --border-on-dark: rgba(255, 255, 255, 0.14); /* Borders on surface-dark. */
+  --ring-brand: rgba(225, 49, 62, 0.35); /* Brand focus-ring color (3px ring). */
+  --ring-blue: rgba(28, 130, 198, 0.35); /* Blue focus-ring color. */
+  --shadow-xs: 0 1px 2px rgba(10, 12, 14, 0.06); /* Hairline lift. */
+  --shadow-sm: 0 2px 6px rgba(10, 12, 14, 0.08); /* Resting cards. */
+  --shadow-md: 0 8px 20px rgba(10, 12, 14, 0.10); /* Raised panels. */
+  --shadow-lg: 0 18px 40px rgba(10, 12, 14, 0.14); /* Hovered cards. */
+  --shadow-xl: 0 30px 70px rgba(10, 12, 14, 0.22); /* Modals and slide frames. */
+  --shadow-brand: 0 14px 34px rgba(225, 49, 62, 0.30); /* Brand-tinted glow, hero CTAs only. */
+  --shadow-blue: 0 14px 34px rgba(28, 130, 198, 0.28); /* Blue glow for blue CTAs. */
+  --halo-white: 0 0 0 8px #ffffff, 0 18px 40px rgba(0, 0, 0, 0.45); /* Signature white halo around the logo disc on dark or gradient grounds. */
+}
+:root {
+  --space-0: 0; /* Spacing step on the 8px grid. */
+  --space-1: 0.25rem; /* Spacing step on the 8px grid. */
+  --space-2: 0.5rem; /* Spacing step on the 8px grid. */
+  --space-3: 0.75rem; /* Spacing step on the 8px grid. */
+  --space-4: 1rem; /* Default card padding. */
+  --space-5: 1.5rem; /* Gutter between grid columns (8px base grid). */
+  --space-6: 2rem; /* Spacing step on the 8px grid. */
+  --space-7: 2.5rem; /* Spacing step on the 8px grid. */
+  --space-8: 3rem; /* Spacing step on the 8px grid. */
+  --space-9: 4rem; /* Spacing step on the 8px grid. */
+  --space-10: 5rem; /* Spacing step on the 8px grid. */
+  --space-11: 6rem; /* Vertical section padding. */
+  --space-12: 8rem; /* Spacing step on the 8px grid. */
+  --radius-xs: 4px; /* Small chips. */
+  --radius-sm: 8px; /* Inputs. */
+  --radius-md: 12px; /* Swatches, small cards. */
+  --radius-lg: 18px; /* Cards and panels. */
+  --radius-xl: 26px; /* Large feature panels. */
+  --radius-pill: 999px; /* CTAs, badges and phone-number capsules. */
+  --radius-circle: 50%; /* Round icon badges and the logo disc. */
+  --fs-2xs: 0.6875rem; /* 11px micro labels. */
+  --fs-xs: 0.75rem; /* 12px captions. */
+  --fs-sm: 0.875rem; /* 14px eyebrows and small UI. */
+  --fs-base: 1rem; /* 16px body. */
+  --fs-md: 1.125rem; /* 18px. */
+  --fs-lg: 1.375rem; /* 22px. */
+  --fs-xl: 1.75rem; /* 28px. */
+  --fs-2xl: 2.25rem; /* 36px. */
+  --fs-3xl: 3rem; /* 48px section headlines. */
+  --fs-4xl: 4rem; /* 64px page headlines. */
+  --fs-5xl: 5.25rem; /* 84px hero display. */
+  --fw-regular: 400; /* Body. */
+  --fw-medium: 500; /* Lead copy, display minimum. */
+  --fw-semibold: 600; /* Sub-heads. */
+  --fw-bold: 700; /* Headlines and CTAs. */
+  --fw-heavy: 800; /* Stat numbers and heavy labels. */
+  --lh-tight: 1.02; /* Display headlines. */
+  --lh-snug: 1.18; /* Sub-heads and labels. */
+  --lh-normal: 1.5; /* Body copy. */
+  --lh-relaxed: 1.65; /* Long-form copy. */
+  --ls-display: -0.01em; /* Headings (h1–h5). */
+  --ls-tight: -0.02em; /* Hero and .chc-headline. */
+  --ls-normal: 0em; /* Body. */
+  --ls-label: 0.06em; /* Uppercase labels. */
+  --ls-wide: 0.14em; /* Eyebrows. */
+  --border-hair: 1px; /* Card and input borders. */
+  --border-thin: 1.5px; /* Emphasised input borders. */
+  --border-thick: 2px; /* Thick borders. */
+  --border-accent: 3px; /* Red/blue accent rules. */
+  --container-max: 1200px; /* Content container width. */
+  --container-wide: 1380px; /* Wide container for full-bleed sections. */
+  --grad-brand: linear-gradient(135deg, #E1313E 0%, #C81D2B 100%); /* Primary buttons and red icon badges. */
+  --grad-blue: linear-gradient(135deg, #2C92D3 0%, #1366A0 100%); /* Blue buttons and badges. */
+  --grad-ember: linear-gradient(135deg, #F37C20 0%, #E1313E 100%); /* Orange-to-red accent badges. */
+  --grad-flyer: linear-gradient(120deg, #E1313E 0%, #C81D2B 42%, #0A0C0E 78%); /* Signature red-to-black flyer sweep for hero and section backgrounds. */
+  --scrim-dark: linear-gradient(180deg, rgba(10,12,14,0) 0%, rgba(10,12,14,0.78) 100%); /* Protection scrim for white text over photos. */
+  --font-display: "CHC Display", "Bunken Tech Sans Pro", system-ui, sans-serif;
+  --font-sans: "CHC Sans", "Century Gothic", "Questrial", system-ui, sans-serif;
+  --font-heavy: "CHC Heavy", "Arial Black", "Archivo", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  --text-display-hero: italic 700 84px/1.02 var(--font-display); /* Hero headline, set UPPERCASE. Two-line split with the second line in brand red. */
+  --text-display-h1: italic 700 64px/1.02 var(--font-display); /* Page headline, UPPERCASE italic. */
+  --text-display-h2: italic 700 48px/1.02 var(--font-display); /* Section headline (SectionHeading), UPPERCASE italic. */
+  --text-subhead: 600 26px/1.18 var(--font-display); /* Sub-heads under display headlines. */
+  --text-eyebrow: italic 700 14px/1.18 var(--font-display); /* Eyebrows above headlines, UPPERCASE in brand red or orange (.chc-eyebrow). */
+  --text-lead: 500 19px/1.5 var(--font-sans); /* Intro paragraphs under a headline. */
+  --text-body: 400 16px/1.5 var(--font-sans); /* Default running copy and UI text. */
+  --text-body-relaxed: 400 15px/1.65 var(--font-sans); /* Long-form copy in text-secondary or ink-700. */
+  --text-caption: 400 12px/1.5 var(--font-sans); /* Captions and fine print in ink-500. */
+  --text-heavy-stat: 800 30px/1.05 var(--font-heavy); /* Chunky stat and service labels, UPPERCASE. */
+  --text-heavy-label: 800 15px/1.05 var(--font-heavy); /* Small heavy labels, UPPERCASE, often red-600. */
+}
+.display-hero {
+  font-family: var(--font-display);
+  font-size: 84px;
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+.display-h1 {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+.display-h2 {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+.subhead {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.18;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  font-style: italic;
+}
+.lead {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.body-relaxed {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.caption {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.heavy-stat {
+  font-family: var(--font-heavy);
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.heavy-label {
+  font-family: var(--font-heavy);
+  font-size: 15px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-Med.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-MedIt.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-SeBd.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-SeBdIt.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-BoldIt.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-ExBd.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Display";
+  src: url("assets/fonts/BunkenTechSansPro-ExBdIt.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Sans";
+  src: url("assets/fonts/Jost-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Sans";
+  src: url("assets/fonts/Jost-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Sans";
+  src: url("assets/fonts/Jost-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Sans";
+  src: url("assets/fonts/Jost-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Heavy";
+  src: url("assets/fonts/Archivo-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHC Heavy";
+  src: url("assets/fonts/Archivo-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

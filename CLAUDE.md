@@ -941,3 +941,12 @@ README.md                                          # Project setup and overview
 - **Provincial Variations**: Study `billing/CA/BC/` vs `billing/CA/ON/` implementations
 - **Spring Configuration**: Reference the multiple `applicationContext*.xml` files
 - **2Action Migration**: Compare legacy Action classes with their 2Action equivalents
+---
+
+## CHC additions (Canadian Heart Care fork)
+
+CHC-specific plans and requirements live under `docs/chc/` — read them before CHC work:
+- `docs/chc/frontend/` — the **CHC front end**, a second branded UI that runs **alongside** stock
+  OpenO. Never modify or restyle stock screens; CHC screens are additive (see its README's hard rules).
+- `docs/chc/JAVA-25-UPGRADE.md` — Java 25 upgrade (branch `upgrade/java-25`).
+Product owner/tester: Ali Zaidi (not a developer — explain changes in plain language with test steps).
