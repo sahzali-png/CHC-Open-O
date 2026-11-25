@@ -41,6 +41,7 @@ screens, never instead of them, so both can be used and compared side by side.
 | 5 | `requirements/05-test-pages.md` | Test pages: Echo, Holter, ECG, Stress test, Stress echo — PDF upload, value extraction, report builder | Document upload + eForms / letters | chc-platform Module 3 (reporting) + `/document` |
 | 6 | `requirements/06-echo-report-and-viewer.md` | Echo report from DICOM measurements + online DICOM viewer (measure, mark up) | Document upload / external PACS | chc-platform Modules 2 & 3 |
 | 7 | `requirements/07-stress-echo.md` | Stress echo: stress ECG PDF + DICOM echo values, wall motion rest/peak, combined report | Document upload | chc-platform Module 3 |
+| 8 | `requirements/08-consult-note.md` | Consult note: billing + diagnosis codes on top, drag-to-reorder sections, quick phrases per box (add/edit/remove), custom templates | eChart encounter note + billing | `/notes`, `/billing`, `/consults` |
 
 ## Comparing the two
 - Each requirement file has a **"Compared with stock"** section: what Classic does today and what CHC changes.
