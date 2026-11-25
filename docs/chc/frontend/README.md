@@ -40,6 +40,7 @@ screens, never instead of them, so both can be used and compared side by side.
 | 4 | `requirements/04-referral-worklist.md` | Fax referral worklist | Inbox / document manager | CHC fax intake service (sibling repo `chc-platform`) + `/document` |
 | 5 | `requirements/05-test-pages.md` | Test pages: Echo, Holter, ECG, Stress test, Stress echo — PDF upload, value extraction, report builder | Document upload + eForms / letters | chc-platform Module 3 (reporting) + `/document` |
 | 6 | `requirements/06-echo-report-and-viewer.md` | Echo report from DICOM measurements + online DICOM viewer (measure, mark up) | Document upload / external PACS | chc-platform Modules 2 & 3 |
+| 7 | `requirements/07-stress-echo.md` | Stress echo: stress ECG PDF + DICOM echo values, wall motion rest/peak, combined report | Document upload | chc-platform Module 3 |
 
 ## Comparing the two
 - Each requirement file has a **"Compared with stock"** section: what Classic does today and what CHC changes.

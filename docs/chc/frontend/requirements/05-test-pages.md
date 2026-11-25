@@ -11,7 +11,7 @@ One page per test type, reached from the sidebar's **Tests & imaging** section:
 | **Holter** | **Uploaded PDF** from the Holter analysis software | Upload → extract → check → report |
 | **ECG** (resting 12-lead) | **Uploaded PDF** from the ECG cart | Upload → extract → check → report |
 | **Stress test** (exercise / GXT) | **Uploaded PDF** from the stress system | Upload → extract → check → report |
-| **Stress echo** | Stress test PDF + echo images/measurements (rest vs peak) | Combined report |
+| **Stress echo** | **Both**: uploaded stress ECG PDF + DICOM echo exam (rest vs peak) — see `07-stress-echo.md` | Combined report |
 
 ABPM gets the same pattern later.
 
