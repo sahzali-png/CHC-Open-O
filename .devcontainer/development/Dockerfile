@@ -1,4 +1,5 @@
-FROM tomcat:9.0.97-jdk21-temurin
+# CHC: Java 25 LTS (was tomcat:9.0.97-jdk21-temurin). Confirm the exact tag exists on Docker Hub.
+FROM tomcat:9.0-jdk25-temurin
 
 # Set environment variables for Tomcat
 ENV CATALINA_HOME /usr/local/tomcat
@@ -10,7 +11,7 @@ ENV JPDA_ADDRESS=8000
 ENV JPDA_TRANSPORT=dt_socket
 
 # Copy Tomcat installation from the official Tomcat image
-COPY --from=tomcat:9.0.97 /usr/local/tomcat $CATALINA_HOME
+COPY --from=tomcat:9.0-jdk25-temurin /usr/local/tomcat $CATALINA_HOME
 
 # Labels
 LABEL author="OpenOSP" \
