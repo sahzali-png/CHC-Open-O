@@ -51,22 +51,16 @@ Opens from the Echo page, the patient chart and the schedule. Runs in the browse
 - Arrows, text labels, freehand drawing, highlight regions, with a choice of colours.
 - Mark-ups are saved with the study (never baked into the original images) and can be shown/hidden.
 
-### Working together
-- Several people can open the same study at once and see each other's cursor, measurements and
-  mark-ups live (e.g. a technologist and a cardiologist reviewing together from different clinics).
-- Comments pinned to a frame ("@Dr. Sample — check this jet"), with replies; people get notified.
-- "Follow me" mode: everyone sees what the presenter sees.
-
 ### Rules
-- Same login and permissions as OpenO; every open, measurement, mark-up and comment is audit-logged.
+- Same login and permissions as OpenO; every open, measurement and mark-up is audit-logged.
+- No live multi-user collaboration (shared sessions, live cursors, pinned comments, "follow me") — removed from scope 2026-11-25.
 - Images stay on CHC's Canadian servers; viewing is over encrypted connections only.
 - **Regulatory:** using the viewer for primary diagnosis may need a Health Canada medical device
-  licence. First version is a **review and collaboration** viewer; confirm with a regulatory
+  licence. First version is a **review** viewer; confirm with a regulatory
   consultant before primary reads.
 
 ## Done when
 - [ ] Measurements from each echo machine model at CHC appear in the right fields (tested with de-identified exams)
 - [ ] Viewer measurements sent to the report land in the right field
-- [ ] Two people in the same study see each other's mark-ups live
 - [ ] Signed echo report appears in stock OpenO and reaches the referrer
 - [ ] Cardiologist champion signed off ranges, flags, phrase library
