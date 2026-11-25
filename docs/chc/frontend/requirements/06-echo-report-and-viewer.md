@@ -18,6 +18,22 @@ Requested by Ali Zaidi, 2026-11-25. Mockups: Design canvas artboards "5 · Echo 
   **Mitral valve** (MR grade, EROA, mean gradient) · **Tricuspid / pulmonic** ·
   **Aorta** (root, ascending) · **Pericardium / other**.
 - Measurements the exam doesn't contain show empty (never guessed). Any field can be typed in.
+
+### Reference ranges and conditional formatting (ASE standards)
+- Each field shows its **normal range** beside it (e.g. "Normal 54–74 %"), by the patient's sex
+  and age where the guideline does so.
+- Ranges and grades come from the current ASE guidelines: ASE/EACVI 2015 chamber quantification
+  (LV, LA), **ASE 2025 right heart**, **ASE 2025 diastolic function**, ASE/EACVI 2017 aortic
+  stenosis and ASE 2017 valvular regurgitation. Data + grading code: chc-platform
+  `services/reporting/app/reference/` (branch `feature/echo-reference-ranges`).
+- The **field itself is colour-coded by grade, always with the word**:
+  Normal (white) · **Mildly abnormal** (amber) · **Moderately abnormal** (orange) ·
+  **Severely abnormal** (red) · Abnormal — no grade in guideline (amber) · Above/below normal (blue).
+- Grades recalculate as soon as a value is typed or sent from the viewer.
+- A legend sits at the top of the measurements; each range has a tooltip naming its source guideline.
+- Where a guideline gives only a normal range (e.g. LV wall thickness in ASE 2015), out-of-range
+  values show "Abnormal" without a severity until CHC adds approved partition values.
+- **The cardiologist champion must approve every range before clinical use.**
 - A value changed by hand shows "edited" next to it, and the original machine value stays in the audit log.
 - Measurements made later in the viewer (part B) can be sent into these fields with one click.
 
