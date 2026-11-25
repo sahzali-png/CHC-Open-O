@@ -38,6 +38,7 @@ screens, never instead of them, so both can be used and compared side by side.
 | 2 | `requirements/02-new-encounter.md` | New encounter form (on schedule) | Add appointment + new demographic screens | `/demographics/search`, `/demographics`, `/schedule/add`, `/consults` |
 | 3 | `requirements/03-patient-chart.md` | Patient chart | eChart (`casemgmt/`, encounter) | `/demographics/summary`, `/notes`, `/rx`, `/allergies`, `/labs`, `/document` |
 | 4 | `requirements/04-referral-worklist.md` | Fax referral worklist | Inbox / document manager | CHC fax intake service (sibling repo `chc-platform`) + `/document` |
+| 5 | `requirements/05-test-pages.md` | Test pages: Echo, Holter, ECG, Stress test, Stress echo — PDF upload, value extraction, report builder | Document upload + eForms / letters | chc-platform Module 3 (reporting) + `/document` |
 
 ## Comparing the two
 - Each requirement file has a **"Compared with stock"** section: what Classic does today and what CHC changes.
