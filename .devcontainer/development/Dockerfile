@@ -1,17 +1,20 @@
-# CHC: Java 25 LTS (was tomcat:9.0.97-jdk21-temurin). Confirm the exact tag exists on Docker Hub.
-FROM tomcat:9.0-jdk25-temurin
+# CHC: Java 25 LTS (was tomcat:9.0.97-jdk21-temurin). Pinned to an exact Tomcat patch and to Ubuntu 24.04
+# ("noble"): the floating 9.0-jdk25-temurin tag can move to a newer Ubuntu, and the apt package names below
+# (e.g. libpng16-16t64) are for 24.04.
+FROM tomcat:9.0.124-jdk25-temurin-noble
 
 # Set environment variables for Tomcat
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 # ENV CATALINA_OPTS="--add-opens java.base/java.net=ALL-UNNAMED -agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n"
-ENV CATALINA_OPTS="--add-opens java.base/java.net=ALL-UNNAMED -Djava.awt.headless=true"
+# --enable-native-access: Java 22+ warns (and a future JDK will block) when Tomcat's JNI library loader runs without it
+ENV CATALINA_OPTS="--add-opens java.base/java.net=ALL-UNNAMED --enable-native-access=ALL-UNNAMED -Djava.awt.headless=true"
 ENV JPDA_OPTS="-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n"
 ENV JPDA_ADDRESS=8000
 ENV JPDA_TRANSPORT=dt_socket
 
 # Copy Tomcat installation from the official Tomcat image
-COPY --from=tomcat:9.0-jdk25-temurin /usr/local/tomcat $CATALINA_HOME
+COPY --from=tomcat:9.0.124-jdk25-temurin-noble /usr/local/tomcat $CATALINA_HOME
 
 # Labels
 LABEL author="OpenOSP" \
@@ -110,7 +113,7 @@ RUN rm -rf $TOMCAT_PATH/webapps/ROOT/* \
 RUN mkdir -p /usr/local/tomcat/webapps/ROOT
 
 # NOTE: DrugRef2 runs in a separate Java 11 container (see .devcontainer/drugref/)
-# Open-Drugref requires Java 11 while Open-O uses Java 21
+# Open-Drugref requires Java 11 while Open-O uses Java 25 (runtime; bytecode level 21)
 
 # Copy scripts and config files
 COPY ./scripts /scripts

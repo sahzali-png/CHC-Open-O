@@ -17,7 +17,7 @@
 ## Core Context
 
 **Domain**: Canadian healthcare EMR system with multi-jurisdictional compliance (BC, ON, generic)
-**Stack**: Java 21, Spring 5.3.39, Hibernate 5.x, Maven 3, Tomcat 9.0.97, MariaDB/MySQL
+**Stack**: Java 25 runtime (code compiled to Java 21 bytecode, `<release>21</release>`, because Spring 5.3 cannot read Java 25 class files), Spring 5.3.39, Hibernate 5.x, Maven 3, Tomcat 9.0.124, MariaDB/MySQL
 **Regulatory**: HIPAA/PIPEDA compliance REQUIRED - PHI protection is CRITICAL
 
 ## Essential Commands
@@ -250,11 +250,11 @@ private SomeManager someManager = SpringUtils.getBean(SomeManager.class);
 ## Technology Stack Details
 
 ### Core Technologies
-- **Java 21** with modern language features and JAXB compatibility
+- **Java 25** runtime; source/bytecode level Java 21 until the Spring 6 upgrade (see `docs/chc/JAVA-25-UPGRADE.md`)
 - **Spring Framework 5.3.39**: IoC container, MVC, AOP, Security, transaction management
 - **Hibernate 5.6.15**: ORM framework with custom MySQL dialect (`OscarMySQL5Dialect`)
 - **Maven 3**: Build management with 200+ healthcare-specific dependencies
-- **Apache Tomcat 9.0.97**: Web application server with debugging enabled
+- **Apache Tomcat 9.0.124**: Web application server with debugging enabled
 - **MariaDB/MySQL**: Database with custom connection tracking (`OscarTrackingBasicDataSource`)
 
 ### Web Technologies
@@ -490,7 +490,7 @@ This migration pattern allows OpenO EMR to modernize incrementally while maintai
 
 ### Docker Setup
 - Development environment runs in Docker containers
-- Tomcat container with Java 21 and debugging enabled
+- Tomcat container with Java 25 and debugging enabled
 - MariaDB database container
 - Maven repository caching for faster builds
 - Port 8080 for web application, 3306 for database

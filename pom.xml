@@ -100,6 +100,27 @@
                 <artifactId>jaxb-core</artifactId>
                 <version>2.3.0.1</version>
             </dependency>
+            <!-- CHC Java 25: bytecode libraries that must understand the Java 25 JVM.
+                 Byte Buddy is used at runtime by Hibernate 5.6 (lazy-loading proxies) and in tests by
+                 Mockito. Without this pin Maven picks Hibernate's 1.12.18 (Java 20 era).
+                 1.18.x supports Java 25 natively, without -Dnet.bytebuddy.experimental. -->
+            <dependency>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy</artifactId>
+                <version>1.18.17</version>
+            </dependency>
+            <dependency>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy-agent</artifactId>
+                <version>1.18.17</version>
+            </dependency>
+            <!-- CHC Java 25: AspectJ weaver evaluates the Spring AOP pointcuts in applicationContext.xml,
+                 spring_jpa.xml and spring_ws.xml. 1.9.7 (transitive) predates Java 17; 1.9.25+ supports Java 25. -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.9.27</version>
+            </dependency>
             <!-- Override transitive xercesImpl to fix CVE-2022-23437 and CVE-2020-14338 -->
             <dependency>
                 <groupId>xerces</groupId>
@@ -1339,11 +1360,11 @@
 
         <!-- Modern Test Framework Dependencies -->
 
-        <!-- Mockito for Java 21 -->
+        <!-- Mockito (CHC Java 25: 5.8.0 -> 5.24.0 for Java 25 support; Byte Buddy pinned in dependencyManagement) -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.8.0</version>
+            <version>5.24.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -1540,7 +1561,8 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.11</version>
+                <!-- CHC Java 25: 0.8.11 only supports up to Java 21; 0.8.14+ supports Java 25 -->
+                <version>0.8.16</version>
                 <executions>
                     <execution>
                         <goals>
@@ -1612,8 +1634,12 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <!-- CHC: Java 25 LTS (was source/target 21) -->
-                    <release>25</release>
+                    <!-- CHC Java 25: the app RUNS on the Java 25 JVM but is COMPILED to Java 21 bytecode.
+                         Spring 5.3.39's bundled ASM rejects class files newer than Java 21 (major version 65),
+                         so release 25 bytecode breaks component-scan / packagesToScan at startup
+                         ("Unsupported class file major version 69"). Raise to 25 only after the Spring 6 upgrade.
+                         See docs/chc/JAVA-25-UPGRADE.md. -->
+                    <release>21</release>
                 </configuration>
             </plugin>
 
@@ -1820,6 +1846,7 @@
                             <argLine>
                                 -Xmx2048m
                                 -Dnet.bytebuddy.experimental=true
+                                -XX:+EnableDynamicAgentLoading
                                 --add-opens java.base/java.lang=ALL-UNNAMED
                                 --add-opens java.base/java.util=ALL-UNNAMED
                             </argLine>
@@ -1863,10 +1890,11 @@
                                 <oscar.dbinit.skip>${oscar.dbinit.skip}</oscar.dbinit.skip>
                                 <buildDirectory>${project.build.directory}</buildDirectory>
                             </systemPropertyVariables>
-                            <!-- Java 21 compatibility flags for JAXB -->
+                            <!-- Java 21/25 compatibility flags for JAXB; EnableDynamicAgentLoading lets Mockito attach its agent without JDK warnings -->
                             <argLine>
                                 -Xmx2048m
                                 -Dnet.bytebuddy.experimental=true
+                                -XX:+EnableDynamicAgentLoading
                                 --add-opens java.base/java.lang=ALL-UNNAMED
                                 --add-opens java.base/java.lang.reflect=ALL-UNNAMED
                                 --add-opens java.base/sun.reflect=ALL-UNNAMED
@@ -1932,7 +1960,7 @@
                     <failOnError>false</failOnError>
                     <failOnWarnings>false</failOnWarnings>
                     <quiet>true</quiet>
-                    <source>25</source>
+                    <source>21</source>
                     <additionalJOptions>
                         <additionalJOption>-Xdoclint:none</additionalJOption>
                     </additionalJOptions>
@@ -1985,7 +2013,7 @@
                 <dependency>
                     <groupId>org.mockito</groupId>
                     <artifactId>mockito-junit-jupiter</artifactId>
-                    <version>5.8.0</version>
+                    <version>5.24.0</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

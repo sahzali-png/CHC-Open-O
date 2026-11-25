@@ -1477,19 +1477,19 @@
   }, {
     "groupId" : "net.bytebuddy",
     "artifactId" : "byte-buddy-agent",
-    "version" : "1.14.10",
+    "version" : "1.18.17",
     "scope" : "test",
     "type" : "jar",
     "optional" : false,
-    "integrity" : "sha512:fxoTELGg9g1v8H3ujZt+QE6PuaJaXAwYbgDK/INOWgJqdpT7ZSeTZ9q/oXicHxYZLQ6nlLf1EfC7NBS41RnppQ=="
+    "integrity" : "sha512:7HWPMORe4g69KRA3IXYUnPX/jzHrcAibQmunXYQMSFmxPRLPPkST7VNuaFrI7g3sWeFL3xcCIxKHRUrkcgqVIA=="
   }, {
     "groupId" : "net.bytebuddy",
     "artifactId" : "byte-buddy",
-    "version" : "1.12.18",
+    "version" : "1.18.17",
     "scope" : "compile",
     "type" : "jar",
     "optional" : false,
-    "integrity" : "sha512:VcR19CgIPWVt2e1aCHK7802j7wPlZ9xd/6kAqDUw0WPC4FnNYwQIxz90B3Ag59/mLVeKD1gmPu7wHJwwfgRDCQ=="
+    "integrity" : "sha512:OET2XH8wMy/Mhgh39+/siOowY1x6geFD91fVZI6PHNBmZTU5k49gJKfzJPDLgR2u7aJmIZ73E9fAGgVO1S8+dQ=="
   }, {
     "groupId" : "net.java.dev.jna",
     "artifactId" : "jna",
@@ -2709,11 +2709,11 @@
   }, {
     "groupId" : "org.aspectj",
     "artifactId" : "aspectjweaver",
-    "version" : "1.9.7",
+    "version" : "1.9.27",
     "scope" : "compile",
     "type" : "jar",
     "optional" : false,
-    "integrity" : "sha512:SQ/PI4SGhI4ny+1F/UN2Exk8nol0iggY+1Mq7VwhOqsmJNFI7Z/VgIDGk02l9+wSxk5Atku0bRbjYetAQ5PFug=="
+    "integrity" : "sha512:fcpJ5zWRaP4xSgaYWRFJI2Gx7q0i9bdaBNtk+SMephXPExFEmGK/96zE60mIgashz9Dc3X3xDA0t/EsKz6L5ig=="
   }, {
     "groupId" : "org.assertj",
     "artifactId" : "assertj-core",
@@ -3165,11 +3165,11 @@
   }, {
     "groupId" : "org.mockito",
     "artifactId" : "mockito-core",
-    "version" : "5.8.0",
+    "version" : "5.24.0",
     "scope" : "test",
     "type" : "jar",
     "optional" : false,
-    "integrity" : "sha512:fYNi4VyUGo/MBw9AsUwAEf6UW+hVta8qNRKS3UadOg56kk4m6+lmBQ3RMEFdBGXeGx73cUFcGvSCLQnA9SKcGw=="
+    "integrity" : "sha512:XulhYPRPYvplkHnH7SyExkfOl7fF9X1jsWS06ujJkUC2dZzTmV5NzVCn81ljCUo1V4uja9a8V3Hmvzl6yA68Rw=="
   }, {
     "groupId" : "org.objenesis",
     "artifactId" : "objenesis",
