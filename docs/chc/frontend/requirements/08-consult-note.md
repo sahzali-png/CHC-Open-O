@@ -22,11 +22,22 @@ Opened from the schedule (New encounter → consult), the patient chart, or a co
 Default sections (the clinic template), each an **editable text box right on the page**:
 Reason for referral · History of presenting illness · Past medical history · Medications ·
 Allergies · Family history · Social history · Cardiac risk factors · Review of systems ·
-Physical examination · Investigations · Impression · Plan · Recommendations to referring
+Physical examination · **Recent investigations** · Impression · Plan · Recommendations to referring
 physician · Follow-up.
 - Boxes auto-grow; autosave every few seconds ("Saved 9:41").
 - Some boxes can be pre-filled from the chart on open (Medications, Allergies, Investigations
   from Holter/Echo/ECG/OLIS), clearly marked "from chart — edit freely".
+
+### Recent investigations box
+- Lists every test this patient has had **in the CHC system** (Echo, Stress echo, Stress test,
+  Holter, ECG, ABPM), newest first: test, date, clinic, reading cardiologist, status.
+- Signed reports show their **Conclusion**; **"+ Add conclusion"** inserts
+  "<Test> (<date>, CHC): <conclusion>" into the box. **"Add all signed"** adds every one.
+  Once added, the row shows "Added ✓" (removing the text from the box re-enables it).
+- Unsigned studies show "Report pending" and can't be added (no unsigned conclusions in a letter).
+- Each row links to the full report. Filter: last 12 months / all.
+- The box text stays freely editable; it also keeps its own quick phrases (e.g. "Labs reviewed on OLIS").
+- Pulled live from the CHC reporting service (chc-platform Module 3) for this patient; every view audit-logged.
 
 ### Reorder by drag and drop
 - Each box has a drag handle on its heading; drag to change the order.
