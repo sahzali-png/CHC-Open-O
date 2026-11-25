@@ -25,15 +25,18 @@ ABPM gets the same pattern later.
   patient by health card + name + date in the PDF; unmatched go to a "Match patient" list).
 
 ### B. Study page (one test for one patient)
-Three parts, side by side on a wide screen, stacked on a tablet:
-1. **Source PDF** — the uploaded file, page by page, zoomable.
-2. **Extracted values** — grouped table (below, per test). Each value shows:
+The page shows the **values read from the PDF — not the PDF itself.** The original document is
+one click away: a **"View original PDF"** button (top of the page) opens it in a separate
+viewer/tab, and each value's "p. N" link opens it at that page with the value highlighted.
+Two parts, side by side on a wide screen, stacked on a tablet:
+1. **Extracted values** — grouped table (below, per test). Each value shows:
    - the value and unit, editable;
    - a flag word where outside the normal range (High / Low / Abnormal);
-   - "found on page N" — clicking it highlights the spot in the PDF;
+   - "p. N" — opens the original PDF at the page it came from;
    - empty and highlighted red if it couldn't be found ("Not found — please enter").
    Staff/cardiologist must tick **"Values checked"** before the report can be signed.
-3. **Report builder** — CHC report template for that test, auto-filled from the checked values:
+   Also on the page: **Replace PDF** (upload a corrected file; values re-read, edits kept in audit log).
+2. **Report builder** — CHC report template for that test, auto-filled from the checked values:
    header (CHC logo, clinic, patient, referring doctor, test date, technologist), a findings
    paragraph written from the values, then **Interpretation** and **Conclusion** for the
    cardiologist (with a small library of standard phrases they can click to insert).

@@ -24,7 +24,8 @@ Either source can arrive first; the study shows "Stress ECG: waiting for PDF" or
 
 ## Page layout
 - Header: patient, date, protocol, reading cardiologist, progress (PDF in · Exam in · Values checked · Signed).
-- **Stress ECG panel**: PDF preview + extracted values (editable, page link, flags, "Not found").
+- **Stress ECG panel**: extracted values only (editable, page link, flags, "Not found"), with a
+  **"View original PDF"** button to open the document when needed — the PDF itself is not shown on the page.
 - **Echo panel**: rest vs peak clip thumbnails (open in viewer, rest/peak side by side), rest/peak
   LVEF and volumes, wall-motion grid for rest and peak with changed segments outlined.
 - **Report builder**: one combined CHC stress echo report — exercise findings, ECG findings, echo
