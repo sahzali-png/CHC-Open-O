@@ -7,7 +7,7 @@ One page per test type, reached from the sidebar's **Tests & imaging** section:
 
 | Page | Values come from | First version |
 |---|---|---|
-| **Echo** | Echo machine (DICOM measurements, chc-platform Module 2/3); PDF upload as fallback | Study list + report builder |
+| **Echo** | Echo machine (DICOM measurements) — full detail in `06-echo-report-and-viewer.md` | Study list + report builder + viewer |
 | **Holter** | **Uploaded PDF** from the Holter analysis software | Upload → extract → check → report |
 | **ECG** (resting 12-lead) | **Uploaded PDF** from the ECG cart | Upload → extract → check → report |
 | **Stress test** (exercise / GXT) | **Uploaded PDF** from the stress system | Upload → extract → check → report |
