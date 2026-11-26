@@ -93,10 +93,37 @@ Interpretation · Impression · Recommendations.
 interpretation statements (shown as "machine read" — never used as the conclusion without the
 cardiologist's edit).
 
-**Stress test (GXT)** — protocol (e.g. Bruce); exercise time; stage reached; METs; resting and
-peak heart rate; % of age-predicted maximum (computed); resting and peak blood pressure;
-reason for stopping; symptoms (chest pain yes/no, limiting or not); ST changes (lead, mm, when);
-arrhythmias; recovery. **Duke treadmill score** computed from time, ST deviation and angina.
+**Stress test (GXT)** — protocol (e.g. Bruce); exercise duration (min:s); workload (METs);
+resting HR, BP, SaO₂; peak (max) HR, BP, workload, SaO₂; reason for stopping; symptoms
+(chest pain yes/no, limiting or not); ST changes (lead, mm, when); arrhythmias; recovery.
+*Stress system/PDF layout: Ali to name the machine(s) and share a de-identified sample.*
+Echo-only fields (RVSP, LVEF, E/e′, exercise/supine/upright EF) appear on the same measurement
+panel but are filled only for stress echo.
+
+**GXT page and report (matches the current Cerebrum GXT "Work Sheet")** — mockup board 11.
+- Layout: toolbar (View test history · Worklist · Resources · Boxes filter · status · Save ·
+  Sign & send) → report boxes → measurement panel at the bottom (like Cerebrum).
+- Report boxes, in this order: Conclusion · Reason for testing · Medications · Protocol ·
+  Resting ECG · Stress ECG · Stress test · Reason for termination · Symptoms during the test ·
+  Arrhythmias. Each box has ✎ phrases · ↻ refill from measurements · ⚑ mark abnormal (same as Holter).
+- **Stress test** box is suggested from the measurements, in CHC's current wording: "The patient
+  exercised according to the {PROTOCOL} for {duration} min:s, achieving a work level of Max. METS:
+  {METs}. The resting heart rate of {HR rest} bpm rose to a maximal heart rate of {max HR} bpm.
+  This value represents {%} % of the maximal, age-predicted heart rate. The resting blood pressure
+  of {BP rest} mmHg, rose to a maximum blood pressure of {max BP} mmHg. The exercise test was
+  stopped due to {reason}."
+- Reason for testing comes from the referral; Medications from the OpenO medication list.
+- Measurement panel groups (as in Cerebrum): **General** (age-predicted max HR, duration,
+  workload, rate-pressure product, % of max HR achieved) · **Resting** (HR, BP, SaO₂, RVSP, LVEF) ·
+  **Peak exercise** (max HR, max BP, workload, SaO₂, RVSP, E/e′, exercise EF, EF stress supine,
+  EF stress upright). Each value shows its unit.
+- **Calculated values** (grey, read-only): age-predicted max HR = 220 − age; % achieved = max HR ÷
+  age-predicted max; rate-pressure product = max HR × peak systolic BP; Duke treadmill score
+  (to add). Formulas and the "below 85% = submaximal" note **need cardiologist sign-off**.
+- **Range colours** use Cerebrum's legend: Normal · Mildly abnormal · Moderately abnormal ·
+  Severely abnormal · No range available · Out of range. Thresholds in the mockup are drafts only.
+- Conclusion must be filled and "Measurements checked" ticked before signing. Saving to the chart
+  and faxing use OpenO's existing document and fax features.
 
 **Stress echo** — all GXT values + rest vs peak wall motion by segment, wall motion score
 index, LVEF rest/peak.
