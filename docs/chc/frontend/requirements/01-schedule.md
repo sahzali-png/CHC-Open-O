@@ -60,3 +60,24 @@ Mockup: artboard "10 · Day sheet — calendar". A **List | Calendar** switch si
   menus (same rules as drag), plus Open chart / Flowsheet.
 - **Later:** drag the bottom edge to change duration; drag from a waiting list into a slot;
   1 Day / 3 Days / 1 Week calendar ranges.
+
+## Patient menu on the patient's name — added 2026-11-25
+Replaces Cerebrum's "e-Chart" hover list. Full item list and mapping: `09-cerebrum-parity.md`.
+- **Opens** when you hover over the patient's name, and also on click or tap (touch screens) and
+  with the keyboard (Enter/Space on the name). Esc or moving the mouse away closes it.
+- **Header**: patient name, age · sex · health card, and an orange **Open chart** button.
+- **Groups**: Chart · Visits & letters · Documents & results · Billing · Patient details, in two
+  columns. All 21 Cerebrum links are kept; "VP History" is renamed **Consultation history**.
+- **Calendar view**: hovering a block would fight with dragging, so the same menu opens from a
+  **Patient menu** button in the "Selected" panel after you click an appointment.
+- **Security**: each link checks the user's rights before opening (e.g. billing links need billing
+  access); links the user can't use are hidden, not shown greyed out. Opening a chart page writes
+  an audit-log entry, as everywhere else.
+- **Build note**: draw the menu in a top-level popover layer so it isn't cut off by the table's
+  horizontal scroll area on small screens.
+
+### Done when (patient menu)
+- [ ] Hover, click, tap and keyboard all open the menu; Esc and mouse-away close it.
+- [ ] Every Cerebrum e-Chart item is reachable from it.
+- [ ] A user without billing rights doesn't see the Billing group.
+

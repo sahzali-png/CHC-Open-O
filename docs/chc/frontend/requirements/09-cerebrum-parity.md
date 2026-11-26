@@ -35,6 +35,34 @@ Status: **Mocked** = in the CHC mockups · **Req** = written into a requirement 
 | Row ⋮ menu | Same | Mocked (contents = To do) |
 | — (not in Cerebrum screenshot) | **Calendar / time-slot view with drag-to-move** (CHC addition) | Mocked |
 
+## e-Chart menu on the patient name (→ CHC "Patient menu", `01-schedule.md`)
+Cerebrum opens a hover list of 21 links ("e-Chart") on the patient's name. CHC keeps every link,
+grouped so staff can find them faster. Nothing is removed.
+
+| Cerebrum item | CHC group → label | Status |
+|---|---|---|
+| Patient Chart | Chart → Patient chart | Mocked (links to Chart) |
+| Flow Sheet | Chart → Flowsheet | Mocked (links to Flowsheet) |
+| Medications | Chart → Medications | Mocked (page = To do) |
+| CPP | Chart → CPP (cumulative patient profile) | Mocked (page = To do) |
+| CDF | Chart → CDF | Mocked — **Ali to confirm what CDF holds** |
+| Additional Notes | Chart → Additional notes | Mocked (page = To do) |
+| Appointments | Visits & letters → Appointments | Mocked (page = To do) |
+| VP History | Visits & letters → **Consultation history** | Mocked (links to Consult) |
+| Letter History | Visits & letters → Letter history | Mocked (page = To do) |
+| External Documents | Documents & results → External documents | Mocked (page = To do) |
+| Upload Loose Reports | Documents & results → Upload loose reports | Mocked (page = To do) |
+| OLIS Report Search | Documents & results → OLIS report search | Mocked (page = To do) |
+| Legacy Data | Documents & results → Legacy data | Mocked (page = To do) |
+| EForms | Documents & results → eForms | Mocked (page = To do) |
+| Billing History | Billing → Billing history | Mocked (page = To do) |
+| Patient Statement | Billing → Patient statement | Mocked (page = To do) |
+| Edit Patient | Patient details → Edit patient | Mocked (page = To do) |
+| Contact Manager | Patient details → Contact manager | Mocked (page = To do) |
+| Patient Alert | Patient details → Patient alert | Mocked (page = To do) |
+| Patient Comments | Patient details → Patient comments | Mocked (page = To do) |
+| Patient Label | Patient details → Print patient label | Mocked (page = To do) |
+
 ## Flowsheet (→ CHC Flowsheet, mockup artboard 9)
 | Cerebrum feature | CHC | Status |
 |---|---|---|
@@ -64,5 +92,6 @@ Used on every test chip (day sheet, flowsheet, filters, chart, worklists). Code 
 ## Still needed from Cerebrum
 - Screens not yet seen: patient chart, test report screens, billing, admin, My Tasks, To Do,
   devices/upload reports, requisition form.
+- What "CDF" in the e-Chart menu stands for and holds.
 - Codes still unconfirmed: ECG, ABPM, contrast (shown as "ECG", "ABPM", "Contrast" for now),
   and any other test groups in use (e.g. nuclear).
