@@ -16,10 +16,10 @@ Use the CSS custom properties; never paste raw hex values into screens.
 "Your Heart in Caring Hands" is **always orange text, or black text on an orange bar.** Never other colours.
 
 ## Type
-- Display: Bunken Tech Sans Pro (licensed — confirm web licence before shipping), UPPERCASE ITALIC for
+- Display: Bunken Tech Sans Pro (licensed — confirm web licence before shipping), UPPERCASE, upright (never italic), for
   page titles, eyebrows and primary buttons. Eyebrows use a `//` prefix, e.g. `// TODAY'S SCHEDULE`.
   All headings (h1–h4) and all buttons (primary and secondary, including pill links) use Bunken.
-  Load real weights 500/600/700 in upright and italic — never let the browser fake bold or italic.
+  Load real weights 500/600/700. **No italics anywhere in the UI** (headings, buttons or body text).
   Jost stays the body font for text, tables and form fields.
 - Body/UI: Jost (substitute for Century Gothic). Labels: uppercase, letter-spacing 0.06em.
 
