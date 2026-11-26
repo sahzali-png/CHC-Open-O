@@ -80,6 +80,7 @@
   --halo-white: 0 0 0 8px #ffffff, 0 18px 40px rgba(0, 0, 0, 0.45); /* Signature white halo around the logo disc on dark or gradient grounds. */
 }
 :root {
+  /* CHC EMR rule: no italics anywhere in the UI. Italic font files are listed for completeness only. */
   --space-0: 0; /* Spacing step on the 8px grid. */
   --space-1: 0.25rem; /* Spacing step on the 8px grid. */
   --space-2: 0.5rem; /* Spacing step on the 8px grid. */
@@ -140,11 +141,11 @@
   --font-sans: "CHC Sans", "Century Gothic", "Questrial", system-ui, sans-serif;
   --font-heavy: "CHC Heavy", "Arial Black", "Archivo", system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "Menlo", monospace;
-  --text-display-hero: italic 700 84px/1.02 var(--font-display); /* Hero headline, set UPPERCASE. Two-line split with the second line in brand red. */
-  --text-display-h1: italic 700 64px/1.02 var(--font-display); /* Page headline, UPPERCASE italic. */
-  --text-display-h2: italic 700 48px/1.02 var(--font-display); /* Section headline (SectionHeading), UPPERCASE italic. */
+  --text-display-hero: 700 84px/1.02 var(--font-display); /* Hero headline, set UPPERCASE. Two-line split with the second line in brand red. */
+  --text-display-h1: 700 64px/1.02 var(--font-display); /* Page headline, UPPERCASE. */
+  --text-display-h2: 700 48px/1.02 var(--font-display); /* Section headline (SectionHeading), UPPERCASE. */
   --text-subhead: 600 26px/1.18 var(--font-display); /* Sub-heads under display headlines. */
-  --text-eyebrow: italic 700 14px/1.18 var(--font-display); /* Eyebrows above headlines, UPPERCASE in brand red or orange (.chc-eyebrow). */
+  --text-eyebrow: 700 14px/1.18 var(--font-display); /* Eyebrows above headlines, UPPERCASE in brand red or orange (.chc-eyebrow). */
   --text-lead: 500 19px/1.5 var(--font-sans); /* Intro paragraphs under a headline. */
   --text-body: 400 16px/1.5 var(--font-sans); /* Default running copy and UI text. */
   --text-body-relaxed: 400 15px/1.65 var(--font-sans); /* Long-form copy in text-secondary or ink-700. */
@@ -158,7 +159,7 @@
   line-height: 1.02;
   font-weight: 700;
   letter-spacing: -0.02em;
-  font-style: italic;
+  font-style: normal;
 }
 .display-h1 {
   font-family: var(--font-display);
@@ -166,7 +167,7 @@
   line-height: 1.02;
   font-weight: 700;
   letter-spacing: -0.02em;
-  font-style: italic;
+  font-style: normal;
 }
 .display-h2 {
   font-family: var(--font-display);
@@ -174,7 +175,7 @@
   line-height: 1.02;
   font-weight: 700;
   letter-spacing: -0.02em;
-  font-style: italic;
+  font-style: normal;
 }
 .subhead {
   font-family: var(--font-display);
@@ -189,7 +190,7 @@
   line-height: 1.18;
   font-weight: 700;
   letter-spacing: 0.14em;
-  font-style: italic;
+  font-style: normal;
 }
 .lead {
   font-family: var(--font-sans);

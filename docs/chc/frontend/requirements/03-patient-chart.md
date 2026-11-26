@@ -3,7 +3,7 @@
 Mockup: https://claude.ai/artifact/68K1sZNfPV9iuNeT1yAuqu#artboard-Chart
 
 ## Layout
-- **Patient banner**: initials badge; name (UPPERCASE italic display); sex · age · DOB; health card
+- **Patient banner**: initials badge; name (UPPERCASE display); sex · age · DOB; health card
   with validity; phone; referring doctor. Right: allergy chip (red, with the word "Allergy"),
   **ConnectingOntario ↗** (contextual launch, patient already selected), **Bill visit**.
   "← Today's schedule" link.
