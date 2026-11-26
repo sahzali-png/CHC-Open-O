@@ -43,18 +43,51 @@ Two parts, side by side on a wide screen, stacked on a tablet:
 2. **Report builder** — CHC report template for that test, auto-filled from the checked values:
    header (CHC logo, clinic, patient, referring doctor, test date, technologist), a findings
    paragraph written from the values, then **Interpretation** and **Conclusion** for the
-   cardiologist (with a small library of standard phrases they can click to insert).
+   cardiologist (with a small library of standard phrases they can click to insert). The Holter
+   layout below is the pattern; other tests get their own box lists.
    Buttons: **Save draft** · **Preview PDF** · **Sign & send**.
    Sign & send = lock the report → save PDF to the patient's documents in OpenO → fax to the
    referring doctor (and family doctor if set) → status Sent. Edits after signing = addendum.
 
 ## Values to extract (first version)
 
-**Holter** — hook-up date/time, duration and analysed time; total beats; heart rate min / mean /
-max (with times); pauses > 2.0 s (count, longest with time); ventricular ectopy (total, % of beats,
-couplets, triplets, runs, longest run and rate); supraventricular ectopy (total, %, runs,
-longest run); atrial fibrillation/flutter burden (%); patient diary events and the rhythm at
-each; ST changes if reported.
+**Holter** — CHC's Holter recorders produce a **Norav Medical "Holter Summary Report"** (Norav
+Holter software 4.x). Read these fields from its summary page, in these groups (same as the PDF):
+- *General*: duration recorded and analysed (hh:mm), start, stop, channels.
+- *Heart rate*: total beats; average, max (with date/time), min (with date/time); bradycardia
+  (< 60 bpm) count and longest (with time); tachycardia (> 100 bpm) count and longest (with time);
+  pauses (> 2000 ms); min RR and max RR in ms (with times).
+- *Ventricular ectopy*: total (% of beats), isolated, bigeminy, trigeminy, couplet, triplet,
+  V. tachycardia, fusion.
+- *Supraventricular ectopy*: total (% of beats), isolated, pair, run (≥ 3).
+- *Atrial fibrillation / flutter*: count, % of analysed time, longest episode.
+- *Relative ST analysis*: max elevation (> 1.00 mm), max depression (> 1.00 mm), reference ST per lead.
+- *Heart rate variability*: SDNN, SDANN, RMSSD, HRV triangular index; ULF, VLF, LF, HF (ms²).
+- *Header*: medications and indications (often blank — fall back to the referral reason).
+The Norav page's own "Conclusion" paragraph is not copied; CHC writes its own report.
+
+**Holter report (matches the current Cerebrum "Work Sheet" and CHC's printed Holter report)** —
+title "HOLTER MONITOR {24/48/72 …} HRS" from the test code (H1/H2/H3/H7/H14). Header: CHC logo and
+clinic address/phone/fax; patient, DOB, age, HIN, sex; family MD; referring MD; visit date.
+Report boxes, in this order, each an editable text box:
+Reason for test · Interim report · Rhythm · Rate comments · Atrial arrhythmias · SVT ·
+Ventricular arrhythmias · Bradyarrhythmias and pauses · Symptoms · Miscellaneous ·
+Interpretation · Impression · Recommendations.
+- Boxes that can be written from the values start with a **suggested sentence** (marked as a
+  suggestion), e.g. Interim report = "Patient {NAME} was monitored for {analysed} hours from {start}
+  to {stop}." and Rate comments = "The minimum heart rate was {min} bpm, the maximum heart rate was
+  {max} bpm and the mean heart rate was {avg} bpm." Suggestions restate numbers only; grading words
+  ("rare", "frequent") and the pause cut-off used in wording (Cerebrum reports say 2.5 s, Norav
+  counts > 2.0 s) are **for the cardiologist champion to decide**.
+- Each box has the three Cerebrum buttons: **✎ phrases** (pick from a phrase list; the list can be
+  edited), **↻ refill from values**, and **⚑ mark abnormal** (box turns red; the appointment shows
+  "Action on abnormal" on the day sheet). *Ali to confirm ⚑ is what Cerebrum's lightning button does.*
+- Toolbar (as in Cerebrum): View test history · Worklist · Resources · Boxes (All / Filled only /
+  Marked abnormal) · status chip · Hide/Show medications (from the OpenO medication list).
+- Footer: Reported by (reading cardiologist) · Technologist(s) · "Report finalized" date stamped on
+  signing. Interpretation must be filled before signing.
+- **Signed PDF** = 2-page CHC report + the Norav summary page appended as page 3 (as today).
+- Fax and save to chart use OpenO's existing document and fax features (no new fax system).
 
 **ECG** — rhythm; heart rate; PR, QRS, QT, QTc (and formula); P / QRS / T axes; machine
 interpretation statements (shown as "machine read" — never used as the conclusion without the
