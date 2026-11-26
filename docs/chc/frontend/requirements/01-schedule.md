@@ -1,4 +1,9 @@
-# 01 · Today's schedule (CHC front end)
+# 01 · Day sheet / today's schedule (CHC front end)
+
+**Updated 2026-11-25:** must match everything Cerebrum's Daysheet does — see
+`09-cerebrum-parity.md`. The appointment table below is superseded by that checklist where they differ
+(per-row tests with times, arrived/left, room/staff, action on abnormal, family + referring doctor
+with fax and billing #, billing type, health card validation, confirmation method, filters, paging).
 
 Mockup: https://claude.ai/artifact/68K1sZNfPV9iuNeT1yAuqu#artboard-Main
 Users: front desk, technologists, cardiologists, clinic managers.
