@@ -15,6 +15,10 @@ One page per test type, reached from the sidebar's **Tests & imaging** section:
 
 ABPM gets the same pattern later.
 
+Test codes on chips and worklists follow `09-cerebrum-parity.md` → "CHC test codes"
+(SE, E1, GXT, H1/H2/H3/H7/H14; consultation shown as "Consultation"). The Holter page covers
+all Holter durations; the duration code sets the expected recording length.
+
 ## Each test type has two views
 
 ### A. Worklist (e.g. "Holter studies")

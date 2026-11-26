@@ -25,8 +25,8 @@ Status: **Mocked** = in the CHC mockups · **Req** = written into a requirement 
 | Patient: name, attending doctor, phone, "Healthcard Validated" | Same, red warning when not validated | Mocked |
 | Patient icons: messages, info, tags | ⋮ menu | To do (define icons) |
 | Confirmation method ("Confirmed via Text Reminder") | Same | Mocked |
-| VP column | — | **To do — confirm what VP means at CHC** |
-| Test chips with times, colour per test group (SE, H3, E1, GXT, VP, contrast) | Chips with full names + times, colour legend | Mocked |
+| VP column / chip (= consultation) | Shown as **"Consultation"** (not "VP") | Mocked |
+| Test chips with times, colour per test group | Same codes (table below) + full name under the code + time; colour legend | Mocked |
 | "Action on Abnormal" per appointment | Red flag + red row edge | Mocked |
 | Flow (flowsheet) link | Flowsheet link → Flowsheet page | Mocked |
 | Family doctor + fax | Same | Mocked |
@@ -45,8 +45,23 @@ Status: **Mocked** = in the CHC mockups · **Req** = written into a requirement 
 | "No Visit" rows | Same | Mocked |
 | Statuses Booked / Flowsheet Completed | + Report signed | Mocked |
 
+## CHC test codes (confirmed by Ali Zaidi, 2026-11-25)
+Used on every test chip (day sheet, flowsheet, filters, chart, worklists). Code shown bold, full name under it.
+
+| Code | Shown as | Test page |
+|---|---|---|
+| VP | **Consultation** (the word, not "VP") | Consult note |
+| SE | SE · Stress echocardiogram | Stress echo |
+| E1 | E1 · Echo | Echo |
+| GXT | GXT · Exercise stress test | Stress test |
+| H1 | H1 · 1-day Holter | Holter |
+| H2 | H2 · 2-day Holter | Holter |
+| H3 | H3 · 3-day Holter | Holter |
+| H7 | H7 · 7-day Holter | Holter |
+| H14 | H14 · 14-day Holter | Holter |
+
 ## Still needed from Cerebrum
 - Screens not yet seen: patient chart, test report screens, billing, admin, My Tasks, To Do,
   devices/upload reports, requisition form.
-- Test-group codes used at CHC and their meanings (SE, H3, E1, GXT, VP, contrast…), so the CHC
-  chips use the same codes staff know.
+- Codes still unconfirmed: ECG, ABPM, contrast (shown as "ECG", "ABPM", "Contrast" for now),
+  and any other test groups in use (e.g. nuclear).
