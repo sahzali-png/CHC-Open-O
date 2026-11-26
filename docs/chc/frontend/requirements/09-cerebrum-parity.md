@@ -33,6 +33,7 @@ Status: **Mocked** = in the CHC mockups · **Req** = written into a requirement 
 | Referral doctor + fax + billing #, house icon when same as family doctor | Same, "also family doctor" label | Mocked |
 | Billing type (OHIP) per appointment, editable | Same | Mocked (edit = To do) |
 | Row ⋮ menu | Same | Mocked (contents = To do) |
+| — (not in Cerebrum screenshot) | **Calendar / time-slot view with drag-to-move** (CHC addition) | Mocked |
 
 ## Flowsheet (→ CHC Flowsheet, mockup artboard 9)
 | Cerebrum feature | CHC | Status |

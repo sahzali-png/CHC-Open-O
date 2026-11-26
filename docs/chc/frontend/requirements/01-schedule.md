@@ -41,3 +41,22 @@ Users: front desk, technologists, cardiologists, clinic managers.
 - [ ] Status changes made here appear in stock, and vice versa
 - [ ] Counts match the underlying data
 - [ ] Tested by Ali with devcontainer test data in both views
+
+## Calendar view (time slots, drag to move) — added 2026-11-25
+Mockup: artboard "10 · Day sheet — calendar". A **List | Calendar** switch sits on the day sheet.
+- **Columns:** by room (Echo 1, Echo 2, Stress 1, Holter, ECG, Consult 1, Consult 2…, per clinic)
+  or by doctor (consultations only — tests stay in room view). Later: by tech.
+- **Rows:** 15-minute slots for the clinic's hours (Mon–Sat), current time line, scroll to now.
+- **Blocks:** start time, test codes, patient, status, room/doctor; height = duration; colour by
+  test code (same colours as list view); red edge = action on abnormal; cancelled hidden unless
+  "Show cancelled".
+- **Drag to move** an encounter to another time and/or column. On drop:
+  - blocked if the slot overlaps another booking in that room/for that doctor (message shown);
+  - blocked past clinic hours; warns if the room can't do that test (e.g. GXT into an Echo room);
+  - confirmation toast with **Undo**; option "Text the patient the new time" (on by default,
+    uses the existing reminder service);
+  - moved appointments update in stock OpenO's schedule too (same appointment record) and are audit-logged.
+- **Keyboard/touch alternative:** click a block → side panel with Start time and Room/Doctor
+  menus (same rules as drag), plus Open chart / Flowsheet.
+- **Later:** drag the bottom edge to change duration; drag from a waiting list into a slot;
+  1 Day / 3 Days / 1 Week calendar ranges.
