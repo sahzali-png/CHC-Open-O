@@ -36,32 +36,34 @@ Status: **Mocked** = in the CHC mockups · **Req** = written into a requirement 
 | — (not in Cerebrum screenshot) | **Calendar / time-slot view with drag-to-move** (CHC addition) | Mocked |
 
 ## e-Chart menu on the patient name (→ CHC "Patient menu", `01-schedule.md`)
-Cerebrum opens a hover list of 21 links ("e-Chart") on the patient's name. CHC keeps every link,
-grouped so staff can find them faster. Nothing is removed.
+Cerebrum opens a hover list ("e-Chart") on the patient's name. CHC shows the same list, grouped.
+**Rule (Ali Zaidi, 2026-11-25): the menu adds no new features. Every item only opens a screen
+that already exists in OpenO**, for that patient. If OpenO has nothing equivalent, the item is
+left out until a decision is made — we do not build a new screen for it.
 
-| Cerebrum item | CHC group → label | Status |
+| Cerebrum item | CHC label | Opens this existing OpenO screen (`webapp/…`) |
 |---|---|---|
-| Patient Chart | Chart → Patient chart | Mocked (links to Chart) |
-| Flow Sheet | Chart → Flowsheet | Mocked (links to Flowsheet) |
-| Medications | Chart → Medications | Mocked (page = To do) |
-| CPP | Chart → CPP (cumulative patient profile) | Mocked (page = To do) |
-| CDF | Chart → CDF | Mocked — **Ali to confirm what CDF holds** |
-| Additional Notes | Chart → Additional notes | Mocked (page = To do) |
-| Appointments | Visits & letters → Appointments | Mocked (page = To do) |
-| VP History | Visits & letters → **Consultation history** | Mocked (links to Consult) |
-| Letter History | Visits & letters → Letter history | Mocked (page = To do) |
-| External Documents | Documents & results → External documents | Mocked (page = To do) |
-| Upload Loose Reports | Documents & results → Upload loose reports | Mocked (page = To do) |
-| OLIS Report Search | Documents & results → OLIS report search | Mocked (page = To do) |
-| Legacy Data | Documents & results → Legacy data | Mocked (page = To do) |
-| EForms | Documents & results → eForms | Mocked (page = To do) |
-| Billing History | Billing → Billing history | Mocked (page = To do) |
-| Patient Statement | Billing → Patient statement | Mocked (page = To do) |
-| Edit Patient | Patient details → Edit patient | Mocked (page = To do) |
-| Contact Manager | Patient details → Contact manager | Mocked (page = To do) |
-| Patient Alert | Patient details → Patient alert | Mocked (page = To do) |
-| Patient Comments | Patient details → Patient comments | Mocked (page = To do) |
-| Patient Label | Patient details → Print patient label | Mocked (page = To do) |
+| Patient Chart | Patient chart | eChart — `oscarEncounter/IncomingEncounter.do?demographicNo=` |
+| Flow Sheet | Flowsheet | Measurement flowsheet — `oscarEncounter/oscarMeasurements/TemplateFlowSheet.jsp?demographic_no=&template=` (CHC cardiology template is set up in Admin → flowsheets, which is configuration, not code) |
+| Medications | Medications | Rx — `oscarRx/choosePatient.do?demographicNo=` |
+| CPP | CPP | eChart (the CPP boxes on the chart) |
+| Additional Notes | Additional notes | eChart notes — **Ali to confirm** this is where Cerebrum's notes belong |
+| Appointments | Appointments | Appointment history — `demographic/demographiccontrol.jsp?displaymode=appt_history` |
+| VP History | Consultation history | eChart visit notes — **Ali to confirm** |
+| Letter History | Letter history | Consultation requests — `oscarEncounter/oscarConsultationRequest/DisplayDemographicConsultationRequests.jsp?de=` |
+| External Documents | External documents | Document manager — `documentManager/documentReport.jsp?function=demographic&functionid=` |
+| Upload Loose Reports | Upload loose reports | Document manager, add mode — `documentManager/documentReport.jsp?…&mode=add` |
+| OLIS Report Search | OLIS report search | `olis/Search.jsp?demographicNo=` (works once OLIS is certified/enabled) |
+| Legacy Data | Legacy data | Document manager, filtered to a "Cerebrum import" document type (a document type is a setting, not new code) — depends on how Cerebrum data is migrated |
+| EForms | eForms | `eform/efmpatientformlist.jsp?demographic_no=` |
+| Billing History | Billing history | `billing/CA/ON/billinghistory.jsp?demographic_no=` |
+| Patient Statement | Patient statement | `billing/CA/ON/endYearStatement.jsp` (year-end statement) — **Ali to confirm** it matches |
+| Edit Patient | Edit patient | Master record — `demographic/demographiccontrol.jsp?displaymode=edit&demographic_no=` |
+| Contact Manager | Contact manager | `demographic/ManageContacts.jsp?demographic_no=` |
+| Patient Alert | Patient alert | Master record, **Alert** field (already shown when the eChart opens) |
+| Patient Comments | Patient comments | Master record, **Notes** field |
+| Patient Label | Print patient label | `demographic/printDemoLabel.jsp?demographic_no=` |
+| CDF | — (left out) | No OpenO match identified yet — **Ali to say what CDF is** before it's mapped |
 
 ## Flowsheet (→ CHC Flowsheet, mockup artboard 9)
 | Cerebrum feature | CHC | Status |
