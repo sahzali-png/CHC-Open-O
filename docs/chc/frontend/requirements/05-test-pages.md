@@ -93,12 +93,25 @@ Interpretation · Impression · Recommendations.
 interpretation statements (shown as "machine read" — never used as the conclusion without the
 cardiologist's edit).
 
-**Stress test (GXT)** — protocol (e.g. Bruce); exercise duration (min:s); workload (METs);
-resting HR, BP, SaO₂; peak (max) HR, BP, workload, SaO₂; reason for stopping; symptoms
-(chest pain yes/no, limiting or not); ST changes (lead, mm, when); arrhythmias; recovery.
-*Stress system/PDF layout: Ali to name the machine(s) and share a de-identified sample.*
-Echo-only fields (RVSP, LVEF, E/e′, exercise/supine/upright EF) appear on the same measurement
-panel but are filled only for stress echo.
+**Stress test (GXT)** — CHC's stress system is **GE CASE (V6.73)**. Its PDF export (≈ 22 pages) is:
+p.1 Exercise Stress Test Report (header, stage table, auto sentence, machine "Interpretation"
+summary) · p.2 **Tabular Summary** · p.3 Graded Exercise Summary (ST by lead) · p.4 Selected
+Medians · p.5–8 Sample cardiac cycles · p.9+ ECG strips.
+**Every measurement on the GXT page is read from this PDF — nothing is typed in or calculated by
+CHC** (Ali Zaidi, 2026-11-25). Fields:
+- *Tabular Summary (p.2)*: protocol; total exercise time; max HR; % of max predicted; max predicted
+  HR; HR at rest; max BP; BP at rest; max RPP; maximum workload (METs); max ST (mm, slope mV/s,
+  lead, stage, time); arrhythmia counts (PVC, PSVC); ST/HR index; reasons for termination.
+- *Stage table (p.2)*: phase, stage, time in stage, speed, grade, METs, HR, BP, RPP, ST level.
+- *ST by lead (p.3)*: ST level (mm) and slope (mV/s) for 12 leads at baseline and at max ST.
+- *Header (p.1)*: test type, attending physician, technician, medications, medical history,
+  reason for exercise test ("--" in the PDF = blank).
+- *Machine summary (p.1)*: resting ECG, HR response, BP response, chest pain, arrhythmias, ST
+  changes — shown read-only as "machine summary", never used as the conclusion. If it disagrees
+  with the counts (e.g. "Arrhythmias: none" but PVC 1), the page shows a warning.
+- Note: GE's "HR at rest" (summary) can differ from the pretest stage HR; use the summary value.
+- Echo-only fields (RVSP, LVEF, E/e′, exercise/supine/upright EF, SaO₂) are **not** on the GXT
+  page (the GE PDF has none); they belong to the stress echo page, from DICOM.
 
 **GXT page and report (matches the current Cerebrum GXT "Work Sheet")** — mockup board 11.
 - Layout: toolbar (View test history · Worklist · Resources · Boxes filter · status · Save ·
@@ -112,14 +125,11 @@ panel but are filled only for stress echo.
   This value represents {%} % of the maximal, age-predicted heart rate. The resting blood pressure
   of {BP rest} mmHg, rose to a maximum blood pressure of {max BP} mmHg. The exercise test was
   stopped due to {reason}."
-- Reason for testing comes from the referral; Medications from the OpenO medication list.
-- Measurement panel groups (as in Cerebrum): **General** (age-predicted max HR, duration,
-  workload, rate-pressure product, % of max HR achieved) · **Resting** (HR, BP, SaO₂, RVSP, LVEF) ·
-  **Peak exercise** (max HR, max BP, workload, SaO₂, RVSP, E/e′, exercise EF, EF stress supine,
-  EF stress upright). Each value shows its unit.
-- **Calculated values** (grey, read-only): age-predicted max HR = 220 − age; % achieved = max HR ÷
-  age-predicted max; rate-pressure product = max HR × peak systolic BP; Duke treadmill score
-  (to add). Formulas and the "below 85% = submaximal" note **need cardiologist sign-off**.
+- Box suggestions come only from PDF values. Reason for testing and Medications are blank when the
+  PDF says "--" (staff can pick phrases); Arrhythmias = the PVC/PSVC counts; Symptoms = chest pain line.
+- Measurement panel (bottom): the GE fields above, each with its unit and a "p. N" link to the
+  page it came from, plus the stage table and the ST-by-lead table. Editable only to correct a
+  misread (edits are audit-logged); no CHC-side calculations.
 - **Range colours** use Cerebrum's legend: Normal · Mildly abnormal · Moderately abnormal ·
   Severely abnormal · No range available · Out of range. Thresholds in the mockup are drafts only.
 - Conclusion must be filled and "Measurements checked" ticked before signing. Saving to the chart
